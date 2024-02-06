@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string name = "Samuel";
+    int age = 19;
+}
+
+@if(age >= 18)
+{
+    <p>@name is of age</p>
+}
+
+else
+{
+    <p style="color: red">I am sorry, @name is underage</p>
+}
+
+<h1>This is @name's About page</h1>
+<h2>The header is @ViewBag.Header</h2>
+<h3>The musician's name is @ViewData["singer"]</h3>
+<h4>The address for the training is </h4>

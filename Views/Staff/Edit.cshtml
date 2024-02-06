@@ -1,0 +1,31 @@
+﻿@{
+}
+
+@model Staff
+
+
+@{
+    try
+    {
+        if(!(@Model.FirstName == null || Model.LastName == null))
+        {
+            <h2>Edit information for @Model.FirstName @Model.LastName</h2>
+        }
+        <form asp-controller="Staff" asp-action="EditStaff" method="post">
+            <label>FirstName: </label><br />
+            <input value="@Model.FirstName" type="text" name="FirstName" /><br /><br />
+            <label>LastName: </label><br />
+            <input value="@Model.LastName" type="text" name="LastName" /><br /><br />
+            <label>Age: </label><br />
+            <input value="@Model.Age" type="number" name="Age" /><br /><br />
+            <input type="hidden" name="Id" value="@Model.Id" />
+
+            <input type="submit" value="Save Changes" class="btn-warning" /><br /><br />
+
+        </form>
+    }    catch (NullReferenceException ex)
+    {
+        <h3>No staff exists with this ID</h3>
+        <p>Go back to <a asp-controller="Staff" asp-action="List">List</a></p>
+    }  
+}

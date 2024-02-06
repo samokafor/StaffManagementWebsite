@@ -1,0 +1,33 @@
+﻿@{
+}
+@model List<Staff>
+
+<h1>This is the List page for Staff</h1>
+
+<table class="table table-bordered table-hover table-dark">
+    <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>AGE</th>
+        <th>ACTION</th>
+    </tr>
+    
+        @foreach(Staff staff in Model)
+        {
+            <tr>
+                <td>@staff.Id</td>
+                <td>@staff.FirstName</td>
+                <td>@staff.LastName</td>
+                <td>@staff.Age</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-controller="Staff" asp-action="ViewStaff" asp-route-id="@staff.Id">View</a>
+                    <a class="btn btn-warning btn-sm" asp-controller="Staff" asp-action="Edit" asp-route-id="@staff.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Staff" asp-action="Delete" asp-route-id="@staff.Id">Delete</a>
+                </td>
+        </tr>
+        }
+    
+</table>
+
+<a class="btn btn-secondary" asp-controller="Staff" asp-action="Create">Add Staff</a>

@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Create Staff Profile";
+}
+
+<style>
+    .bg-image {
+        background-image: url('https://th.bing.com/th/id/R.39ee609d2381b1246bf0580f7740f69f?rik=uWfvRen2526XBQ&riu=http%3a%2f%2fak3.picdn.net%2fshutterstock%2fvideos%2f3644588%2fthumb%2f1.jpg%3fi10c%3dimg.resize(height%3a160)&ehk=3lzP8SotVUTHlmAYI2IFXcwlchIBkTqXudwQSLUHtww%3d&risl=&pid=ImgRaw&r=0');
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .bg-overlay {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+</style>
+
+<div class="bg-image"></div>
+<div class="bg-overlay"></div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">Create A New Staff Profile</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Staff" asp-action="Register" method="post">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="firstName">First Name</label>
+                                    <input class="form-control py-2" id="firstName" type="text" placeholder="Enter First Name" name="FirstName" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mt-3" for="lastName">Last Name</label>
+                                    <input class="form-control py-2" id="lastName" type="text" placeholder="Enter Last Name" name="LastName" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="small mt-3" for="age">Age</label>
+                                    <input class="form-control py-2" id="age" type="number" placeholder="Enter Age" name="Age" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4 mb-0">
+                            <button type="submit" class="btn  btn-sm btn-success btn-block">Save</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <div class="small"><a href="/">Back to Homepage</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
